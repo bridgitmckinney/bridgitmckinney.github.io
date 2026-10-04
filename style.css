@@ -9,7 +9,7 @@
   --rule:#c9d2d8;
 }
 *{box-sizing:border-box}
-html{font-size:20px}
+html{font-size:22px}
 body{
   margin:0;
   background:var(--mist);
@@ -65,7 +65,7 @@ img{max-width:100%;height:auto}
 main{padding:3rem 6vw 4rem;max-width:62rem}
 h2{font-size:1.9rem;line-height:1.15;margin:0 0 .4rem;font-weight:800}
 h3{font-size:1.3rem;line-height:1.2;margin:0 0 .2rem;font-weight:700}
-p{margin:0 0 1rem;max-width:36rem}
+p{margin:0 0 1rem;max-width:34rem}
 .status{font-family:"Alegreya Sans",Arial,sans-serif;font-size:.95rem;color:#40566a;margin:0 0 1.2rem}
 
 .book{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:2.4rem;align-items:start}
@@ -103,7 +103,7 @@ footer a{color:var(--glow)}
 footer p{margin:0 0 .3rem;max-width:none}
 
 @media (max-width:640px){
-  html{font-size:18px}
+  html{font-size:20px}
   .book{grid-template-columns:1fr}
   .cover{max-width:14rem}
   .sky .name{padding-bottom:11rem}
