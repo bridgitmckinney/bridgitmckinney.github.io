@@ -1,0 +1,111 @@
+:root{
+  --night:#16212e;
+  --ridge:#2c4257;
+  --haze:#8098ab;
+  --ember:#a8500f;
+  --glow:#f3c07a;
+  --mist:#eef1f2;
+  --ink:#17222d;
+  --rule:#c9d2d8;
+}
+*{box-sizing:border-box}
+html{font-size:20px}
+body{
+  margin:0;
+  background:var(--mist);
+  color:var(--ink);
+  font-family:"Alegreya",Georgia,serif;
+  line-height:1.6;
+}
+a{color:var(--ember)}
+a:focus-visible{outline:3px solid var(--ember);outline-offset:3px}
+img{max-width:100%;height:auto}
+
+/* ---------- top of every page: dusk sky and ridgelines ---------- */
+.sky{
+  position:relative;
+  color:#fff;
+  background:linear-gradient(180deg,#16212e 0%,#2a3d55 38%,#7d6a78 66%,#e39a4e 88%,#f3c07a 100%);
+  overflow:hidden;
+}
+.sky nav{
+  position:relative;z-index:2;
+  display:flex;flex-wrap:wrap;gap:.25rem 1.6rem;
+  padding:1.1rem 6vw;
+  font-family:"Alegreya Sans",Arial,sans-serif;
+  font-size:.95rem;
+}
+.sky nav a{color:#fff;text-decoration:none;padding:.2rem 0;border-bottom:2px solid transparent}
+.sky nav a:hover,.sky nav a[aria-current="page"]{border-bottom-color:var(--glow)}
+.sky nav a:focus-visible{outline-color:#fff}
+.sky .name{
+  position:relative;z-index:2;
+  padding:3.2rem 6vw 15rem;
+  max-width:46rem;
+}
+.sky.short .name{padding:1.6rem 6vw 8.5rem}
+.sky h1{
+  margin:0;
+  font-weight:800;
+  font-size:clamp(2.6rem,9vw,5.6rem);
+  line-height:.98;
+  letter-spacing:-.015em;
+}
+.sky.short h1{font-size:clamp(2rem,6vw,3.2rem)}
+.sky p{
+  margin:1.1rem 0 0;
+  font-size:1.2rem;
+  font-style:italic;
+  max-width:28rem;
+}
+.ridges{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:15rem;display:block}
+.sky.short .ridges{height:8.5rem}
+
+/* ---------- page body ---------- */
+main{padding:3rem 6vw 4rem;max-width:62rem}
+h2{font-size:1.9rem;line-height:1.15;margin:0 0 .4rem;font-weight:800}
+h3{font-size:1.3rem;line-height:1.2;margin:0 0 .2rem;font-weight:700}
+p{margin:0 0 1rem;max-width:36rem}
+.status{font-family:"Alegreya Sans",Arial,sans-serif;font-size:.95rem;color:#40566a;margin:0 0 1.2rem}
+
+.book{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:2.4rem;align-items:start}
+.book + .book{margin-top:3rem;padding-top:3rem;border-top:1px solid var(--rule)}
+.cover{
+  aspect-ratio:2/3;
+  width:100%;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:1.2rem 1rem;
+  color:var(--glow);
+  text-align:center;
+  background:linear-gradient(180deg,#2a3d55 0%,#7d6a78 34%,#e39a4e 52%,#2c4257 53%,#16212e 100%);
+  box-shadow:0 14px 30px -14px rgba(22,33,46,.7);
+}
+.cover b{display:block;font-size:1.7rem;line-height:1.05;font-weight:800}
+.cover span{display:block;margin-top:.7rem;font-family:"Alegreya Sans",Arial,sans-serif;font-size:.8rem;color:#fff}
+img.cover{padding:0;display:block;object-fit:cover}
+
+.button{
+  display:inline-block;
+  font-family:"Alegreya Sans",Arial,sans-serif;font-weight:700;
+  background:var(--night);color:#fff;text-decoration:none;
+  padding:.7rem 1.3rem;margin-top:.4rem;
+}
+.button:hover{background:var(--ridge)}
+
+.more{margin-top:3.5rem;padding-top:2rem;border-top:1px solid var(--rule)}
+
+footer{
+  background:var(--night);color:#d6dee4;
+  padding:2rem 6vw;
+  font-family:"Alegreya Sans",Arial,sans-serif;font-size:.9rem;
+}
+footer a{color:var(--glow)}
+footer p{margin:0 0 .3rem;max-width:none}
+
+@media (max-width:640px){
+  html{font-size:18px}
+  .book{grid-template-columns:1fr}
+  .cover{max-width:14rem}
+  .sky .name{padding-bottom:11rem}
+  .ridges{height:11rem}
+}
