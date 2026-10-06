@@ -127,12 +127,12 @@ footer p{margin:0 0 .3rem;max-width:none}
 
 button.button{border:0;font:inherit;cursor:pointer}
 
-.status:has(+ .readers){margin-bottom:.35rem}
-.readers{font-family:"Alegreya Sans",Arial,sans-serif;font-size:.95rem;color:var(--night);margin:0 0 1.2rem;padding:.35rem .7rem;border-left:3px solid var(--ember);background:rgba(0,0,0,.035);display:inline-block}
+.side{display:flex;flex-direction:column;gap:1rem;min-width:0}
+.readers{font-family:"Alegreya Sans",Arial,sans-serif;font-size:.92rem;line-height:1.35;color:var(--night);margin:0;padding:.5rem .7rem;border-left:3px solid var(--ember);background:rgba(0,0,0,.035);max-width:none}
 .readers b{font-size:1.05rem}
-
-.praise{margin:1.4rem 0 1.4rem}
-.praise h3{font-family:"Alegreya Sans",Arial,sans-serif;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ember);margin:0 0 .7rem}
-.praise blockquote{margin:0 0 .8rem;padding:.7rem 1rem;border-left:3px solid var(--glow);background:var(--mist)}
-.praise blockquote p{margin:0;font-style:italic;max-width:none}
-.praise blockquote footer{background:none;color:#40566a;padding:.3rem 0 0;margin:0;font-family:"Alegreya Sans",Arial,sans-serif;font-size:.85rem;font-style:normal;text-align:left}
+.praise{margin:0}
+.praise h3{font-family:"Alegreya Sans",Arial,sans-serif;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ember);margin:0 0 .6rem}
+.praise blockquote{margin:0 0 .6rem;padding:.6rem .75rem;border-left:3px solid var(--glow);background:var(--mist)}
+.praise blockquote p{margin:0;font-style:italic;font-size:.92rem;line-height:1.4;max-width:none}
+.praise blockquote footer{background:none;color:#40566a;padding:.3rem 0 0;margin:0;font-family:"Alegreya Sans",Arial,sans-serif;font-size:.8rem;font-style:normal;text-align:left}
+@media (max-width:640px){.side{max-width:22rem}}
