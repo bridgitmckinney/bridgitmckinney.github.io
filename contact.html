@@ -26,6 +26,9 @@
 <h2>Write to Bridgit</h2>
 <p>Reader mail is always welcome. Questions about a book, a note about a character you loved, or a typo you spotted can all go to the same place.</p>
 <p><a class="button" href="mailto:bridgitmckinney@yahoo.com">Email bridgitmckinney@yahoo.com</a></p>
+<p>If that button does not open your email, the address is <b id="addr">bridgitmckinney@yahoo.com</b>. <button class="button alt" type="button" id="copyaddr">Copy address</button> <span id="copied" role="status"></span></p>
+<p>Or write from your webmail: <a href="https://mail.google.com/mail/?view=cm&amp;to=bridgitmckinney@yahoo.com">Gmail</a>, <a href="https://compose.mail.yahoo.com/?to=bridgitmckinney@yahoo.com">Yahoo Mail</a>, or <a href="https://outlook.live.com/mail/0/deeplink/compose?to=bridgitmckinney@yahoo.com">Outlook</a>.</p>
+<script>document.getElementById("copyaddr").addEventListener("click",function(){var a="bridgitmckinney@yahoo.com",d=document.getElementById("copied");function ok(){d.textContent="Copied."}if(navigator.clipboard){navigator.clipboard.writeText(a).then(ok,function(){d.textContent="Select the address and copy it."})}else{d.textContent="Select the address and copy it."}});</script>
 </main>
 <footer>
 <p>&copy; 2026 Bridgit McKinney. All rights reserved.</p>
