@@ -136,3 +136,5 @@ button.button{border:0;font:inherit;cursor:pointer}
 .praise blockquote p{margin:0;font-style:italic;font-size:.92rem;line-height:1.4;max-width:none}
 .praise blockquote footer{background:none;color:#40566a;padding:.3rem 0 0;margin:0;font-family:"Alegreya Sans",Arial,sans-serif;font-size:.8rem;font-style:normal;text-align:left}
 @media (max-width:640px){.side{max-width:22rem}}
+
+.sample{font-family:"Alegreya Sans",Arial,sans-serif;font-size:.9rem;color:#40566a;margin:.9rem 0 0;max-width:none}
