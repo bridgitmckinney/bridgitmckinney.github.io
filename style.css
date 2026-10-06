@@ -126,3 +126,7 @@ footer p{margin:0 0 .3rem;max-width:none}
 }
 
 button.button{border:0;font:inherit;cursor:pointer}
+
+.status:has(+ .readers){margin-bottom:.35rem}
+.readers{font-family:"Alegreya Sans",Arial,sans-serif;font-size:.95rem;color:var(--night);margin:0 0 1.2rem;padding:.35rem .7rem;border-left:3px solid var(--ember);background:rgba(0,0,0,.035);display:inline-block}
+.readers b{font-size:1.05rem}
