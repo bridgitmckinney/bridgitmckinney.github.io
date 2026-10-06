@@ -124,3 +124,5 @@ footer p{margin:0 0 .3rem;max-width:none}
   .sky .name{padding-bottom:11rem}
   .ridges{height:11rem}
 }
+
+button.button{border:0;font:inherit;cursor:pointer}
