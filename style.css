@@ -142,3 +142,21 @@ button.button{border:0;font:inherit;cursor:pointer}
 .photo-col{margin:0}
 .fun-fact{margin-top:1.1rem;padding-left:.8rem;border-left:3px solid var(--ember);font-style:italic;font-size:.95rem;line-height:1.5;color:var(--ink)}
 @media (max-width:640px){.photo-col{max-width:24rem}}
+
+.review{max-width:34rem;display:flex;flex-direction:column;gap:.35rem;margin:1.2rem 0}
+.review label,.review legend{font-family:"Alegreya Sans",Arial,sans-serif;font-weight:700;font-size:.92rem;margin-top:.8rem;color:var(--night)}
+.review .opt{font-weight:400;color:#40566a}
+.review input[type=text],.review input[type=email],.review select,.review textarea{font:inherit;font-size:1rem;padding:.6rem .7rem;border:1px solid var(--rule);border-radius:4px;background:#fff;color:var(--ink);width:100%;box-sizing:border-box}
+.review input:focus,.review select:focus,.review textarea:focus{outline:2px solid var(--ember);outline-offset:1px}
+.review .trap{position:absolute;left:-9999px}
+.stars{border:0;padding:0;margin:0}
+.starrow{display:inline-flex;flex-direction:row-reverse;gap:.15rem}
+.starrow input{position:absolute;opacity:0;width:1px;height:1px}
+.starrow label{font-size:2rem;line-height:1;margin:0;cursor:pointer;color:var(--rule);font-weight:400}
+.starrow input:checked~label,.starrow label:hover,.starrow label:hover~label{color:var(--ember)}
+.starrow input:focus-visible+label{outline:2px solid var(--ember)}
+.review .check{font-weight:400;display:flex;gap:.5rem;align-items:flex-start;margin:1rem 0 .6rem}
+.review .check input{margin-top:.3rem}
+.review button{align-self:flex-start}
+.note{font-size:.9rem;color:#40566a}
+.reviewlink{margin-top:.8rem}

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leave a Review | Bridgit McKinney</title>
+<meta name="description" content="Leave a review of a Bridgit McKinney book.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;0,800;1,400&family=Alegreya+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="sky short">
+<nav aria-label="Site"><a href="index.html">Home</a><a href="books.html">Books</a><a href="about.html">About</a><a href="review.html" aria-current="page">Reviews</a><a href="contact.html" >Contact</a></nav>
+<div class="name"><h1>Reviews</h1></div>
+<svg class="ridges" viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true">
+<path fill="#6f8496" opacity=".75" d="M0 150 C90 120 150 95 230 110 S380 160 470 120 S620 60 720 95 S880 150 960 115 S1120 80 1200 120 V300 H0Z"/>
+<path fill="#4f6679" d="M0 190 C100 150 180 170 270 150 S420 110 520 150 S680 200 780 160 S940 120 1040 155 S1150 185 1200 165 V300 H0Z"/>
+<path fill="#2c4257" d="M0 225 C120 195 200 215 310 195 S480 170 590 205 S760 240 860 205 S1040 180 1200 215 V300 H0Z"/>
+<path fill="#16212e" d="M0 262 C140 240 260 262 380 246 S600 232 720 256 S960 272 1080 250 S1170 250 1200 258 V300 H0Z"/>
+<path fill="#eef1f2" d="M0 292 C200 280 400 296 600 286 S1000 282 1200 292 V300 H0Z"/>
+</svg>
+</header>
+<main>
+<h2>Leave a review</h2>
+<p>Did you get your copy straight from Bridgit? Your review helps the next reader decide. It only takes a minute, and you do not need an account.</p>
+<form class="review" action="https://formsubmit.co/bridgitmckinney@yahoo.com" method="POST">
+<input type="hidden" name="_subject" value="New book review from the website">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_next" value="https://bridgitmckinney.github.io/thanks.html">
+<input type="text" name="_honey" class="trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+<label for="book">Which book did you read?</label>
+<select id="book" name="Book" required><option value="">Choose a book</option>
+<option value="The Alpha's Brother">The Alpha's Brother</option>
+<option value="Rook">Rook</option>
+<option value="Where the Wild Sky Breaks">Where the Wild Sky Breaks</option>
+<option value="A Wolf Remembers">A Wolf Remembers</option>
+<option value="The Cost of Love">The Cost of Love</option>
+<option value="The Great War">The Great War</option>
+<option value="The Pale Strand: Collector's Edition">The Pale Strand: Collector's Edition</option>
+<option value="Even Gods Fall">Even Gods Fall</option>
+<option value="Blood Lines">Blood Lines</option>
+<option value="The Blood of Three Crowns">The Blood of Three Crowns</option>
+</select>
+<fieldset class="stars"><legend>Your rating</legend><div class="starrow"><input type="radio" id="s5" name="Stars" value="5 of 5 stars" required><label for="s5" title="5 stars">&#9733;</label><input type="radio" id="s4" name="Stars" value="4 of 5 stars" required><label for="s4" title="4 stars">&#9733;</label><input type="radio" id="s3" name="Stars" value="3 of 5 stars" required><label for="s3" title="3 stars">&#9733;</label><input type="radio" id="s2" name="Stars" value="2 of 5 stars" required><label for="s2" title="2 stars">&#9733;</label><input type="radio" id="s1" name="Stars" value="1 of 5 stars" required><label for="s1" title="1 stars">&#9733;</label></div></fieldset>
+<label for="name">Your name, as you want it shown</label>
+<input id="name" name="Name" type="text" required maxlength="60" placeholder="First name, or first name and last initial">
+<label for="town">Where you are from <span class="opt">(optional)</span></label>
+<input id="town" name="Town" type="text" maxlength="60" placeholder="City and state">
+<label for="review">Your review</label>
+<textarea id="review" name="Review" required rows="7" maxlength="3000" placeholder="What did you think? Please keep big twists out of it."></textarea>
+<label for="email">Your email <span class="opt">(optional, never shown)</span></label>
+<input id="email" name="email" type="email">
+<label class="check"><input type="checkbox" name="Permission" value="Yes, may be shown on the website" required> Bridgit may show my review, name and rating on her website.</label>
+<button class="button" type="submit">Send my review</button>
+</form>
+<p class="note">Reviews are read by Bridgit before they go up, so yours will appear on the Books page within a few days.</p>
+<script>(function(){var b={"the-alphas-brother":"The Alpha's Brother","rook":"Rook","where-the-wild-sky-breaks":"Where the Wild Sky Breaks","a-wolf-remembers":"A Wolf Remembers","the-cost-of-love":"The Cost of Love","the-great-war":"The Great War","the-pale-strand-collectors-edition":"The Pale Strand: Collector's Edition","even-gods-fall":"Even Gods Fall","blood-lines":"Blood Lines","the-blood-of-three-crowns":"The Blood of Three Crowns"},k=new URLSearchParams(location.search).get("book");if(k&&b[k])document.getElementById("book").value=b[k];})();</script>
+</main>
+<footer>
+<p>&copy; 2026 Bridgit McKinney. All rights reserved.</p>
+<p>Write to me at <a href="mailto:bridgitmckinney@yahoo.com">bridgitmckinney@yahoo.com</a></p>
+</footer>
+</body>
+</html>
