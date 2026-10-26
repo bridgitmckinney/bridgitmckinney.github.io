@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Read Free | Bridgit McKinney</title>
+<meta name="description" content="Read the opening chapters of any Bridgit McKinney book free, right here.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;0,800;1,400&family=Alegreya+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=20261026b">
+</head>
+<body>
+<header class="sky short">
+<nav aria-label="Site"><a href="index.html">Home</a><a href="books.html">Books</a><a href="read.html" aria-current="page">Read Free</a><a href="about.html">About</a><a href="review.html">Reviews</a><a href="contact.html">Contact</a></nav>
+<div class="name"><h1>Read Free</h1></div>
+<svg class="ridges" viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true">
+<path fill="#6f8496" opacity=".75" d="M0 150 C90 120 150 95 230 110 S380 160 470 120 S620 60 720 95 S880 150 960 115 S1120 80 1200 120 V300 H0Z"/>
+<path fill="#4f6679" d="M0 190 C100 150 180 170 270 150 S420 110 520 150 S680 200 780 160 S940 120 1040 155 S1150 185 1200 165 V300 H0Z"/>
+<path fill="#2c4257" d="M0 225 C120 195 200 215 310 195 S480 170 590 205 S760 240 860 205 S1040 180 1200 215 V300 H0Z"/>
+<path fill="#16212e" d="M0 262 C140 240 260 262 380 246 S600 232 720 256 S960 272 1080 250 S1170 250 1200 258 V300 H0Z"/>
+<path fill="#eef1f2" d="M0 292 C200 280 400 296 600 286 S1000 282 1200 292 V300 H0Z"/>
+</svg>
+</header>
+<main>
+<section id="picker">
+<h2>Pick a book and start reading</h2>
+<p>The opening chapters of every book, free, right here on this page. No account, no download, no sign-up.</p>
+<div class="shelf" id="shelf"></div>
+</section>
+
+<section id="reader" class="reader" hidden>
+<p class="back"><a href="read.html">&larr; All free samples</a></p>
+<h2 id="r-title"></h2>
+<p class="status" id="r-sub"></p>
+<div class="reader-frame">
+<iframe id="r-frame" title="Free sample" loading="lazy" allowfullscreen></iframe>
+</div>
+<p class="sample">Use the arrows or swipe to turn pages. Sample not showing? <a id="r-alt" href="#">Open it on Amazon instead</a>.</p>
+<div class="keep-reading">
+<h3>Want to know what happens next?</h3>
+<p>Shop your favorite store and compare prices.</p>
+<div id="r-buy"></div>
+<p class="sample"><a href="books.html#compare">See every book and store in one chart</a></p>
+</div>
+</section>
+</main>
+<footer>
+<p>&copy; 2026 Bridgit McKinney. All rights reserved.</p>
+<p>Write to me at <a href="mailto:bridgitmckinney@yahoo.com">bridgitmckinney@yahoo.com</a></p>
+</footer>
+<script>
+var BOOKS = [
+  {id:"the-alphas-brother", title:"The Alpha’s Brother", sub:"A werewolf romance. New release.", asin:"B0HM1YNSRT",
+   buy:[["Kindle on Amazon","https://www.amazon.com/dp/B0HM1YNSRT"],["Paperback on Amazon","https://www.amazon.com/dp/B0HM2TVNK3"],["Other stores","https://books2read.com/u/476RAL",1]]},
+  {id:"rook", title:"Rook", sub:"A werewolf novel.", asin:"B0HHYPQS2L",
+   buy:[["Kindle on Amazon","https://www.amazon.com/dp/B0HHYPQS2L"],["Paperback on Amazon","https://www.amazon.com/dp/B0HHYRRWXJ"],["Other stores","https://books2read.com/u/m2OAE1",1]]},
+  {id:"where-the-wild-sky-breaks", title:"Where the Wild Sky Breaks", sub:"A Montana romance.", asin:"B0HKDZYYF1",
+   buy:[["Kindle on Amazon","https://www.amazon.com/dp/B0HKDZYYF1"],["Paperback on Amazon","https://www.amazon.com/dp/B0HLY2H1K4"],["Other stores","https://books2read.com/u/brDvvZ",1]]},
+  {id:"a-wolf-remembers", title:"A Wolf Remembers", sub:"Pale Strand, book one.", asin:"B0GSSL2D41",
+   buy:[["Kindle on Amazon","https://www.amazon.com/dp/B0GSSL2D41"],["Paperback on Amazon","https://www.amazon.com/dp/B0GSZJX1PV"],["Other stores","https://books2read.com/u/3yAYWn",1]]},
+  {id:"the-cost-of-love", title:"The Cost of Love", sub:"Pale Strand, book two.", asin:"B0GSX6VSMZ",
+   buy:[["Kindle on Amazon","https://www.amazon.com/dp/B0GSX6VSMZ"],["Paperback on Amazon","https://www.amazon.com/dp/B0HLY2DR4Z"],["Other stores","https://books2read.com/u/b6N1V6",1]]},
+  {id:"the-great-war", title:"The Great War", sub:"Pale Strand, book three.", asin:"B0H1SWW72V",
+   buy:[["Kindle on Amazon","https://www.amazon.com/dp/B0H1SWW72V"],["Paperback on Amazon","https://www.amazon.com/dp/B0HLY6K14J"],["Other stores","https://books2read.com/u/38oY1O",1]]},
+  {id:"even-gods-fall", title:"Even Gods Fall", sub:"A romance of the Greek gods.", asin:"B0HJ1QDM15",
+   buy:[["Buy on Amazon","https://www.amazon.com/dp/B0HJ1QDM15"]]},
+  {id:"blood-lines", title:"Blood Lines", sub:"A dark comedy of the Greek gods.", asin:"B0HN9FWL72",
+   buy:[["Kindle on Amazon","https://www.amazon.com/dp/B0HN9FWL72"],["Paperback on Amazon","https://www.amazon.com/dp/B0HNDMR2YH"]]},
+  {id:"the-blood-of-three-crowns", title:"The Blood of Three Crowns", sub:"A paranormal romance.", asin:"B0HKGG7C2T",
+   buy:[["Kindle on Amazon","https://www.amazon.com/dp/B0HKGG7C2T"],["Paperback on Amazon","https://www.amazon.com/dp/B0HLY2B711"],["Other stores","https://books2read.com/u/bOQoMK",1]]}
+];
+(function(){
+  var id = new URLSearchParams(location.search).get("book");
+  if (id === "the-pale-strand-collectors-edition") id = "a-wolf-remembers";
+  var book = BOOKS.filter(function(b){return b.id === id;})[0];
+  if (!book) {
+    var shelf = document.getElementById("shelf");
+    BOOKS.forEach(function(b){
+      var a = document.createElement("a");
+      a.href = "read.html?book=" + b.id;
+      a.innerHTML = '<img src="images/' + b.id + '.jpg?v=20261017a" alt="" width="800" height="1200"><b></b><span>Read free</span>';
+      a.querySelector("b").textContent = b.title;
+      shelf.appendChild(a);
+    });
+    return;
+  }
+  document.getElementById("picker").hidden = true;
+  document.getElementById("reader").hidden = false;
+  document.title = book.title + " | Read Free | Bridgit McKinney";
+  document.getElementById("r-title").textContent = book.title;
+  document.getElementById("r-sub").textContent = book.sub + " Free opening chapters.";
+  var f = document.getElementById("r-frame");
+  f.title = "Free sample of " + book.title;
+  f.src = "https://read.amazon.com/kp/embed?asin=" + book.asin + "&preview=inline&linkCode=kpe";
+  var alt = document.getElementById("r-alt");
+  alt.href = "https://read.amazon.com/kp/embed?asin=" + book.asin + "&preview=newtab&linkCode=kpe";
+  alt.target = "_blank"; alt.rel = "noopener";
+  var buy = document.getElementById("r-buy");
+  book.buy.forEach(function(x){
+    var a = document.createElement("a");
+    a.className = "button" + (x[2] ? " alt" : "");
+    a.href = x[1];
+    a.textContent = x[0];
+    buy.appendChild(a);
+  });
+})();
+</script>
+</body>
+</html>
