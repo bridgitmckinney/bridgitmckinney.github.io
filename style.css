@@ -211,3 +211,5 @@ button.button{border:0;font:inherit;cursor:pointer}
 .chapters hr{border:0;text-align:center;margin:2rem 0}
 .chapters hr::after{content:"\2726";color:var(--ember)}
 .soon{background:#fff;padding:1.4rem 1.5rem;max-width:46rem;box-shadow:0 14px 30px -18px rgba(22,33,46,.55)}
+.chapters h3 small{display:block;font-size:1.05rem;font-weight:400;font-style:italic;color:#40566a;margin-top:.35rem}
+.chapters .pov{font-family:"Alegreya Sans",Arial,sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ember);text-align:center;margin:1.4rem 0 1rem}
