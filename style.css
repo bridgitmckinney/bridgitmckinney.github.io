@@ -215,3 +215,16 @@ button.button{border:0;font:inherit;cursor:pointer}
 .chapters .pov{font-family:"Alegreya Sans",Arial,sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ember);text-align:center;margin:1.4rem 0 1rem}
 .wip{font-family:"Alegreya Sans",Arial,sans-serif;font-size:.9rem;line-height:1.5;max-width:40rem;margin:0 0 1.6rem;padding:.8rem 1rem;border-left:4px solid var(--glow);background:#fff}
 .shelf span.ready{color:var(--ember);font-weight:700}
+
+/* ---------- reader list sign-up ---------- */
+.signup{margin-top:1.6rem;padding-top:1.4rem;border-top:1px solid var(--rule)}
+.signup-section .signup{margin-top:3rem;padding:1.4rem 1.5rem;border:0;border-left:4px solid var(--ember);background:#fff;max-width:46rem}
+.signup h3{margin-bottom:.3rem}
+.signup-row{display:flex;flex-wrap:wrap;gap:.6rem;margin:.8rem 0 .4rem}
+.signup-row input{font:inherit;font-size:.95rem;padding:.6rem .7rem;border:1px solid var(--rule);border-radius:4px;background:#fff;color:var(--ink);flex:1 1 10rem;min-width:0}
+.signup-row input:focus{outline:2px solid var(--ember);outline-offset:1px}
+.signup-row .button{margin:0}
+.signup .fine{font-family:"Alegreya Sans",Arial,sans-serif;font-size:.8rem;color:#40566a;margin:0;max-width:none}
+.signup .trap{position:absolute;left:-9999px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.signup-row .button{font-family:"Alegreya Sans",Arial,sans-serif;font-weight:700}
