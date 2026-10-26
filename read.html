@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;0,800;1,400&family=Alegreya+Sans:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=20261026e">
+<script src="stats.js?v=20261026a"></script>
 </head>
 <body>
 <header class="sky short">
@@ -80,6 +81,7 @@ var BOOKS = [
   if (id === "the-pale-strand-collectors-edition") id = "a-wolf-remembers";
   var book = BOOKS.filter(function(b){return b.id === id;})[0];
   if (!book) {
+    bmStats.send("/read.html", "Read Free: all samples");
     var shelf = document.getElementById("shelf");
     BOOKS.forEach(function(b){
       var a = document.createElement("a");
@@ -92,6 +94,16 @@ var BOOKS = [
     return;
   }
   document.getElementById("picker").hidden = true;
+  document.body.setAttribute("data-book", book.id);
+  bmStats.send("/read/" + book.id, "Sample opened: " + book.title + (book.ready ? "" : " (coming soon page)"));
+  function watchEnd(){
+    if (!("IntersectionObserver" in window)) return;
+    var seen = false, io = new IntersectionObserver(function(es){
+      if (seen || !es[0].isIntersecting) return; seen = true; io.disconnect();
+      bmStats.send("/finished/" + book.id, "Read to end of Chapter Two: " + book.title, true);
+    });
+    io.observe(document.querySelector(".keep-reading"));
+  }
   document.getElementById("reader").hidden = false;
   document.title = book.title + " | Read Free | Bridgit McKinney";
   document.getElementById("r-title").textContent = book.title;
@@ -99,7 +111,7 @@ var BOOKS = [
   document.getElementById("r-amazon").href = "https://www.amazon.com/dp/" + book.asin;
   fetch("chapters/" + book.id + ".html?v=" + Date.now().toString(36))
     .then(function(r){ if (!r.ok) throw 0; return r.text(); })
-    .then(function(html){ var t = document.getElementById("r-text"); t.innerHTML = html; t.hidden = false; })
+    .then(function(html){ var t = document.getElementById("r-text"); t.innerHTML = html; t.hidden = false; setTimeout(watchEnd, 1500); })
     .catch(function(){ document.getElementById("r-soon").hidden = false; });
   var buy = document.getElementById("r-buy");
   book.buy.forEach(function(x){
@@ -111,5 +123,6 @@ var BOOKS = [
   });
 })();
 </script>
+<script data-goatcounter="https://bridgitmckinney.goatcounter.com/count" data-goatcounter-settings='{"no_onload": true}' async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
