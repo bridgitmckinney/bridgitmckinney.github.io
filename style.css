@@ -160,3 +160,36 @@ button.button{border:0;font:inherit;cursor:pointer}
 .review button{align-self:flex-start}
 .note{font-size:.9rem;color:#40566a}
 .reviewlink{margin-top:.8rem}
+
+/* ---------- store comparison chart (Books page) ---------- */
+.compare{margin:0 0 3rem;padding:0 0 3rem;border-bottom:1px solid var(--rule);scroll-margin-top:1.5rem}
+.compare-intro{max-width:40rem}
+.compare-wrap{margin:1.4rem 0 1rem;background:#fff;box-shadow:0 14px 30px -18px rgba(22,33,46,.55)}
+.compare-table{width:100%;border-collapse:collapse;font-family:"Alegreya Sans",Arial,sans-serif;font-size:.85rem}
+.compare-table thead th{background:var(--night);color:#fff;text-align:left;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.7rem;padding:.75rem .8rem}
+.compare-table tbody tr{border-top:1px solid var(--rule)}
+.compare-table tbody tr:nth-child(even){background:#f6f8f9}
+.compare-table tbody th{text-align:left;font-family:"Alegreya",Georgia,serif;font-weight:700;font-size:.95rem;line-height:1.25;padding:.75rem .8rem;min-width:11rem}
+.compare-table tbody th a{color:var(--ink);text-decoration:none}
+.compare-table tbody th a:hover{text-decoration:underline;color:var(--ember)}
+.compare-table tbody th span{display:block;font-family:"Alegreya Sans",Arial,sans-serif;font-weight:400;font-size:.75rem;color:#40566a;margin-top:.15rem}
+.compare-table td{padding:.6rem .8rem;vertical-align:middle;white-space:nowrap}
+.compare-table td.none{color:#9aa8b3}
+.price{display:inline-block;font-weight:700;text-decoration:none;background:var(--night);color:#fff;padding:.4rem .75rem}
+.price:hover{background:var(--ember)}
+.price.alt{background:transparent;color:var(--night);box-shadow:inset 0 0 0 2px var(--night)}
+.price.alt:hover{background:var(--night);color:#fff}
+.compare-note{font-family:"Alegreya Sans",Arial,sans-serif;font-size:.85rem;color:#40566a;max-width:none}
+
+@media (max-width:760px){
+  .compare-wrap{background:none;box-shadow:none}
+  .compare-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .compare-table,.compare-table tbody,.compare-table tr,.compare-table th,.compare-table td{display:block;width:100%}
+  .compare-table tbody tr{background:#fff !important;border:0;margin-bottom:1rem;box-shadow:0 10px 24px -16px rgba(22,33,46,.6)}
+  .compare-table tbody th{background:var(--night);padding:.7rem .9rem}
+  .compare-table tbody th a{color:#fff}
+  .compare-table tbody th span{color:#c9d2d8}
+  .compare-table td{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.55rem .9rem;border-top:1px solid var(--rule)}
+  .compare-table td::before{content:attr(data-label);font-weight:700;color:var(--night)}
+  .compare-table td.none{display:none}
+}
