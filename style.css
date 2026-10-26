@@ -228,3 +228,9 @@ button.button{border:0;font:inherit;cursor:pointer}
 .signup .trap{position:absolute;left:-9999px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .signup-row .button{font-family:"Alegreya Sans",Arial,sans-serif;font-weight:700}
+
+/* ---------- book of the month ---------- */
+.featured{display:grid;grid-template-columns:minmax(0,12rem) minmax(0,1fr);gap:2rem;align-items:start;background:#fff;padding:1.6rem;margin:0 0 3rem;border-top:4px solid var(--ember);box-shadow:0 14px 30px -18px rgba(22,33,46,.55)}
+.feat-tag{font-family:"Alegreya Sans",Arial,sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ember);margin:0 0 .3rem}
+.feat-perk{font-family:"Alegreya Sans",Arial,sans-serif;font-size:.9rem;margin:1.1rem 0 0;padding:.6rem .8rem;background:var(--mist);border-left:3px solid var(--glow);max-width:none}
+@media (max-width:640px){.featured{grid-template-columns:1fr}.featured .cover{max-width:11rem}}

@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;0,800;1,400&family=Alegreya+Sans:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261026f">
+<link rel="stylesheet" href="style.css?v=20261026g">
 <script src="stats.js?v=20261026a"></script>
 </head>
 <body>
@@ -27,6 +27,18 @@
 </svg>
 </header>
 <main>
+<!-- BOOK OF THE MONTH: to change the featured book each month, edit this block on index.html and books.html -->
+<section class="featured" aria-labelledby="feat-title">
+<img class="cover" src="images/rook.jpg?v=20261017a" width="800" height="1200" alt="Cover of Rook by Bridgit McKinney">
+<div>
+<p class="feat-tag">Book of the Month</p>
+<h2 id="feat-title">Rook</h2>
+<p class="status">A werewolf novel.</p>
+<p>At eighteen, Damien Steel&rsquo;s first shift fails, because the wolf inside him is nothing anyone expected. Rook is ancient, sovereign, and merciless, and he has no intention of submitting to Damien simply because they share the same body.</p>
+<p><a class="button free" href="read.html?book=rook">Read the opening chapters free</a> <a class="button alt" href="books.html#rook">See where to buy</a></p>
+<p class="feat-perk"><b>Reader list members get this month&rsquo;s book at a subscriber discount.</b> <a href="#join">Join free</a> and the offer comes straight to your inbox.</p>
+</div>
+</section>
 <section class="compare" id="compare" aria-labelledby="compare-title">
 <h2 id="compare-title">Shop your favorite store</h2>
 <p class="compare-intro">Every book, every format, every store in one place. Tap <b>Check price</b> to see today&rsquo;s price at that store, then buy wherever you like best. <b>Compare stores</b> opens one page listing Apple Books, Barnes &amp; Noble, Kobo, Google Play, library apps, and more.</p>
@@ -255,7 +267,7 @@
 <p class="reviewlink"><a class="button alt" href="review.html?book=the-blood-of-three-crowns">Review this book</a></p>
 </div>
 </section>
-<section class="signup-section">
+<section class="signup-section" id="join">
 <form class="signup" action="https://formsubmit.co/bridgitmckinney@yahoo.com" method="POST">
 <input type="hidden" name="_subject" value="New reader list sign-up from the website">
 <input type="hidden" name="_template" value="table">
@@ -264,13 +276,13 @@
 <input type="hidden" name="Signed up from" value="Books page" class="signup-from">
 <input type="text" name="_honey" class="trap" tabindex="-1" autocomplete="off" aria-hidden="true">
 <h3>Be first to know</h3>
-<p>Join my reader list and get an email when a new book comes out, plus first looks at new chapters before anyone else.</p>
+<p>Join my reader list for a featured book every month with a subscriber-only discount, plus an email when a new book comes out.</p>
 <div class="signup-row">
 <label class="sr" for="su-name2">First name</label><input id="su-name2" name="First name" type="text" maxlength="40" placeholder="First name">
 <label class="sr" for="su-email2">Email</label><input id="su-email2" name="email" type="email" required placeholder="Your email">
 <button class="button free" type="submit">Join the reader list</button>
 </div>
-<p class="fine">Just new releases and first looks. No spam, never shared, and you can leave anytime.</p>
+<p class="fine">Just the monthly feature and new releases. No spam, never shared, and you can leave anytime.</p>
 </form>
 </section>
 </main>
