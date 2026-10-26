@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;0,800;1,400&family=Alegreya+Sans:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261026d">
+<link rel="stylesheet" href="style.css?v=20261026e">
 </head>
 <body>
 <header class="sky short">
@@ -29,6 +29,7 @@
 <section id="picker">
 <h2>Pick a book and start reading</h2>
 <p>The first two chapters of every book, free, right here. No account, no download, no sign-up.</p>
+<div class="wip"><b>A work in progress.</b> I&rsquo;m adding the free chapters one book at a time, so a few titles aren&rsquo;t here yet. Books marked <b>Read free now</b> are ready to read on this page. The rest are marked <b>Coming soon</b>, and until they arrive you can read their free sample on Amazon. Nothing is broken; more books are on the way.</div>
 <div class="shelf" id="shelf"></div>
 </section>
 
@@ -38,7 +39,7 @@
 <p class="status" id="r-sub"></p>
 <article id="r-text" class="chapters" hidden></article>
 <div id="r-soon" class="soon" hidden>
-<p>The free chapters for this book are coming to this page soon. Until then, you can read the opening chapters free on Amazon.</p>
+<p><b>Coming soon.</b> I&rsquo;m adding the free chapters to this site one book at a time, and this one isn&rsquo;t up yet. Nothing is broken; it&rsquo;s a work in progress. Until it&rsquo;s here, you can read the opening chapters free on Amazon.</p>
 <a class="button free" id="r-amazon" href="#" target="_blank" rel="noopener">Read the free sample on Amazon</a>
 </div>
 <div class="keep-reading">
@@ -55,7 +56,7 @@
 </footer>
 <script>
 var BOOKS = [
-  {id:"the-alphas-brother", title:"The Alpha’s Brother", sub:"A werewolf romance. New release.", asin:"B0HM1YNSRT",
+  {id:"the-alphas-brother", ready:1, title:"The Alpha’s Brother", sub:"A werewolf romance. New release.", asin:"B0HM1YNSRT",
    buy:[["Kindle on Amazon","https://www.amazon.com/dp/B0HM1YNSRT"],["Paperback on Amazon","https://www.amazon.com/dp/B0HM2TVNK3"],["Other stores","https://books2read.com/u/476RAL",1]]},
   {id:"rook", title:"Rook", sub:"A werewolf novel.", asin:"B0HHYPQS2L",
    buy:[["Kindle on Amazon","https://www.amazon.com/dp/B0HHYPQS2L"],["Paperback on Amazon","https://www.amazon.com/dp/B0HHYRRWXJ"],["Other stores","https://books2read.com/u/m2OAE1",1]]},
@@ -69,7 +70,7 @@ var BOOKS = [
    buy:[["Kindle on Amazon","https://www.amazon.com/dp/B0H1SWW72V"],["Paperback on Amazon","https://www.amazon.com/dp/B0HLY6K14J"],["Other stores","https://books2read.com/u/38oY1O",1]]},
   {id:"even-gods-fall", title:"Even Gods Fall", sub:"A romance of the Greek gods.", asin:"B0HJ1QDM15",
    buy:[["Buy on Amazon","https://www.amazon.com/dp/B0HJ1QDM15"]]},
-  {id:"blood-lines", title:"Blood Lines", sub:"A dark comedy of the Greek gods.", asin:"B0HN9FWL72",
+  {id:"blood-lines", ready:1, title:"Blood Lines", sub:"A dark comedy of the Greek gods.", asin:"B0HN9FWL72",
    buy:[["Kindle on Amazon","https://www.amazon.com/dp/B0HN9FWL72"],["Paperback on Amazon","https://www.amazon.com/dp/B0HNDMR2YH"]]},
   {id:"the-blood-of-three-crowns", title:"The Blood of Three Crowns", sub:"A paranormal romance.", asin:"B0HKGG7C2T",
    buy:[["Kindle on Amazon","https://www.amazon.com/dp/B0HKGG7C2T"],["Paperback on Amazon","https://www.amazon.com/dp/B0HLY2B711"],["Other stores","https://books2read.com/u/bOQoMK",1]]}
@@ -83,7 +84,8 @@ var BOOKS = [
     BOOKS.forEach(function(b){
       var a = document.createElement("a");
       a.href = "read.html?book=" + b.id;
-      a.innerHTML = '<img src="images/' + b.id + '.jpg?v=20261017a" alt="" width="800" height="1200"><b></b><span>Read free</span>';
+      a.innerHTML = '<img src="images/' + b.id + '.jpg?v=20261017a" alt="" width="800" height="1200"><b></b><span></span>';
+      var tag = a.querySelector("span"); tag.textContent = b.ready ? "Read free now" : "Coming soon"; if (b.ready) tag.className = "ready";
       a.querySelector("b").textContent = b.title;
       shelf.appendChild(a);
     });
@@ -93,7 +95,7 @@ var BOOKS = [
   document.getElementById("reader").hidden = false;
   document.title = book.title + " | Read Free | Bridgit McKinney";
   document.getElementById("r-title").textContent = book.title;
-  document.getElementById("r-sub").textContent = book.sub + " The first two chapters, free.";
+  document.getElementById("r-sub").textContent = book.sub + (book.ready ? " The first two chapters, free." : "");
   document.getElementById("r-amazon").href = "https://www.amazon.com/dp/" + book.asin;
   fetch("chapters/" + book.id + ".html?v=" + Date.now().toString(36))
     .then(function(r){ if (!r.ok) throw 0; return r.text(); })
