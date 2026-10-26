@@ -234,3 +234,11 @@ button.button{border:0;font:inherit;cursor:pointer}
 .feat-tag{font-family:"Alegreya Sans",Arial,sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ember);margin:0 0 .3rem}
 .feat-perk{font-family:"Alegreya Sans",Arial,sans-serif;font-size:.9rem;margin:1.1rem 0 0;padding:.6rem .8rem;background:var(--mist);border-left:3px solid var(--glow);max-width:none}
 @media (max-width:640px){.featured{grid-template-columns:1fr}.featured .cover{max-width:11rem}}
+
+.how{margin-top:3rem;padding:1.4rem 1.5rem;background:#fff;border-left:4px solid var(--glow);max-width:46rem}
+.how h3{margin:0 0 .6rem}
+.how-steps{margin:0 0 1rem;padding-left:1.4rem}
+.how-steps li{margin:0 0 .55rem;line-height:1.5}
+.how-note,.how-promise{font-family:"Alegreya Sans",Arial,sans-serif;font-size:.92rem;margin:.6rem 0 0;max-width:none}
+.how-promise{padding:.6rem .8rem;background:var(--mist)}
+.how + .signup{margin-top:1.2rem}
