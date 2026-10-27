@@ -109,7 +109,7 @@ var BOOKS = [
   }
   document.getElementById("picker").hidden = true;
   document.body.setAttribute("data-book", book.id);
-  document.querySelector(".signup-from").value = "Free sample: " + book.title;
+  var from = document.querySelector(".signup-from"); if (from) from.value = "Free sample: " + book.title;
   bmStats.send("/read/" + book.id, "Sample opened: " + book.title + (book.ready ? "" : " (coming soon page)"));
   function watchEnd(){
     if (!("IntersectionObserver" in window)) return;
