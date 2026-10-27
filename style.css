@@ -242,3 +242,4 @@ button.button{border:0;font:inherit;cursor:pointer}
 .how-note,.how-promise{font-family:"Alegreya Sans",Arial,sans-serif;font-size:.92rem;margin:.6rem 0 0;max-width:none}
 .how-promise{padding:.6rem .8rem;background:var(--mist)}
 .how + .signup{margin-top:1.2rem}
+.confirm-box{padding:.8rem 1rem;background:#fff;border-left:4px solid var(--ember)}
