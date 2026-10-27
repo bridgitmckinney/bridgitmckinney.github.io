@@ -277,7 +277,7 @@ footer{font-size:1rem}
 .review label,.review legend{font-size:1rem}
 @media (max-width:640px){
   .sky nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.4rem;padding:1rem 5vw}
-  .sky nav a{justify-content:center;background:rgba(255,255,255,.1);border-radius:4px;border-bottom:0;padding:.55rem .4rem}
+  .sky nav a{justify-content:center;background:rgba(255,255,255,.1);border-radius:4px;border-bottom:0;padding:.55rem .4rem;text-align:center;line-height:1.25}
   .sky nav a[aria-current="page"]{background:rgba(255,255,255,.25)}
   .sky nav a.nav-join{background:var(--ember)}
   .sky .name{padding-top:1.6rem;padding-bottom:7rem}
