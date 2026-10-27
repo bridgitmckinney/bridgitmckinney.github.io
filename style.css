@@ -243,3 +243,10 @@ button.button{border:0;font:inherit;cursor:pointer}
 .how-promise{padding:.6rem .8rem;background:var(--mist)}
 .how + .signup{margin-top:1.2rem}
 .confirm-box{padding:.8rem 1rem;background:#fff;border-left:4px solid var(--ember)}
+.sky nav a.nav-join{background:var(--ember);padding:.2rem .7rem;border-radius:3px;border-bottom:0}
+.sky nav a.nav-join:hover,.sky nav a.nav-join[aria-current="page"]{background:#c4621a;border-bottom:0}
+.join-lede{font-size:1.15rem;max-width:40rem}
+.join-page .join-top .signup{margin-top:1.2rem}
+.join-page .join-how{margin-top:2rem}
+.join-banner{margin-top:3rem;padding:1.4rem 1.5rem;background:#fff;border-left:4px solid var(--ember);max-width:46rem}
+.join-banner h3{margin:0 0 .3rem}
