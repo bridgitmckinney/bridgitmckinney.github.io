@@ -181,7 +181,7 @@ button.button{border:0;font:inherit;cursor:pointer}
 .price.alt:hover{background:var(--night);color:#fff}
 .compare-note{font-family:"Alegreya Sans",Arial,sans-serif;font-size:.85rem;color:#40566a;max-width:none}
 
-@media (max-width:760px){
+@media (max-width:1000px){
   .compare-wrap{background:none;box-shadow:none}
   .compare-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
   .compare-table,.compare-table tbody,.compare-table tr,.compare-table th,.compare-table td{display:block;width:100%}
@@ -289,7 +289,7 @@ footer{font-size:1rem}
 .compare-table td{padding:.55rem .5rem}
 .compare-table tbody th{min-width:9rem}
 .compare-table .price{min-height:44px;padding:.5rem .8rem;white-space:normal;text-align:center}
-@media (max-width:760px){.compare-table td{white-space:normal}.compare-table .price{max-width:60%}}
+@media (max-width:1000px){.compare-table td{white-space:normal}.compare-table .price{max-width:60%}}
 .signup-row .field input{flex:none;height:auto}
 .sky .name{padding-bottom:9rem}
 .ridges{height:9rem}
