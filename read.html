@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;0,800;1,400&family=Alegreya+Sans:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261027f">
+<link rel="stylesheet" href="style.css?v=20261028a">
 <script src="stats.js?v=20261027c"></script>
 </head>
 <body>
@@ -72,23 +72,23 @@
 <script>
 var BOOKS = [
   {id:"the-alphas-brother", ready:1, title:"The Alpha’s Brother", sub:"A werewolf romance. New release.", asin:"B0HM1YNSRT",
-   buy:[["Kindle on Amazon","https://www.amazon.com/dp/B0HM1YNSRT"],["Paperback on Amazon","https://www.amazon.com/dp/B0HM2TVNK3"],["Other stores","https://books2read.com/u/476RAL",1]]},
+   buy:[["Buy on Amazon","https://www.amazon.com/dp/B0HM1YNSRT"],["Other stores","https://books2read.com/u/476RAL",1]]},
   {id:"rook", ready:1, title:"Rook", sub:"A werewolf novel.", asin:"B0HHYPQS2L",
-   buy:[["Kindle on Amazon","https://www.amazon.com/dp/B0HHYPQS2L"],["Paperback on Amazon","https://www.amazon.com/dp/B0HHYRRWXJ"],["Other stores","https://books2read.com/u/m2OAE1",1]]},
+   buy:[["Buy on Amazon","https://www.amazon.com/dp/B0HHYPQS2L"],["Other stores","https://books2read.com/u/m2OAE1",1]]},
   {id:"where-the-wild-sky-breaks", ready:1, title:"Where the Wild Sky Breaks", sub:"A Montana romance.", asin:"B0HKDZYYF1",
-   buy:[["Kindle on Amazon","https://www.amazon.com/dp/B0HKDZYYF1"],["Paperback on Amazon","https://www.amazon.com/dp/B0HLY2H1K4"],["Other stores","https://books2read.com/u/brDvvZ",1]]},
+   buy:[["Buy on Amazon","https://www.amazon.com/dp/B0HKDZYYF1"],["Other stores","https://books2read.com/u/brDvvZ",1]]},
   {id:"a-wolf-remembers", title:"A Wolf Remembers", sub:"Pale Strand, book one.", asin:"B0GSSL2D41",
-   buy:[["Kindle on Amazon","https://www.amazon.com/dp/B0GSSL2D41"],["Paperback on Amazon","https://www.amazon.com/dp/B0GSZJX1PV"],["Other stores","https://books2read.com/u/3yAYWn",1]]},
+   buy:[["Buy on Amazon","https://www.amazon.com/dp/B0GSSL2D41"],["Other stores","https://books2read.com/u/3yAYWn",1]]},
   {id:"the-cost-of-love", title:"The Cost of Love", sub:"Pale Strand, book two.", asin:"B0GSX6VSMZ",
-   buy:[["Kindle on Amazon","https://www.amazon.com/dp/B0GSX6VSMZ"],["Paperback on Amazon","https://www.amazon.com/dp/B0HLY2DR4Z"],["Other stores","https://books2read.com/u/b6N1V6",1]]},
+   buy:[["Buy on Amazon","https://www.amazon.com/dp/B0GSX6VSMZ"],["Other stores","https://books2read.com/u/b6N1V6",1]]},
   {id:"the-great-war", ready:1, title:"The Great War", sub:"Pale Strand, book three.", asin:"B0H1SWW72V",
-   buy:[["Kindle on Amazon","https://www.amazon.com/dp/B0H1SWW72V"],["Paperback on Amazon","https://www.amazon.com/dp/B0HLY6K14J"],["Other stores","https://books2read.com/u/38oY1O",1]]},
+   buy:[["Buy on Amazon","https://www.amazon.com/dp/B0H1SWW72V"],["Other stores","https://books2read.com/u/38oY1O",1]]},
   {id:"even-gods-fall", title:"Even Gods Fall", sub:"A romance of the Greek gods.", asin:"B0HJ1QDM15",
    buy:[["Buy on Amazon","https://www.amazon.com/dp/B0HJ1QDM15"]]},
   {id:"blood-lines", ready:1, title:"Blood Lines", sub:"A dark comedy of the Greek gods.", asin:"B0HN9FWL72",
-   buy:[["Kindle on Amazon","https://www.amazon.com/dp/B0HN9FWL72"],["Paperback on Amazon","https://www.amazon.com/dp/B0HNDMR2YH"]]},
+   buy:[["Buy on Amazon","https://www.amazon.com/dp/B0HN9FWL72"]]},
   {id:"the-blood-of-three-crowns", ready:1, title:"The Blood of Three Crowns", sub:"A paranormal romance.", asin:"B0HKGG7C2T",
-   buy:[["Kindle on Amazon","https://www.amazon.com/dp/B0HKGG7C2T"],["Paperback on Amazon","https://www.amazon.com/dp/B0HLY2B711"],["Other stores","https://books2read.com/u/bOQoMK",1]]}
+   buy:[["Buy on Amazon","https://www.amazon.com/dp/B0HKGG7C2T"],["Other stores","https://books2read.com/u/bOQoMK",1]]}
 ];
 (function(){
   var id = new URLSearchParams(location.search).get("book");
@@ -134,6 +134,7 @@ var BOOKS = [
     a.className = "button" + (x[2] ? " alt" : "");
     a.href = x[1];
     a.textContent = x[0];
+    if (x[1].indexOf("amazon.com") > -1) { a.className += " amazon"; var s = document.createElement("span"); s.className = "btn-sub"; s.textContent = "Kindle or paperback"; a.appendChild(s); }
     buy.appendChild(a);
   });
 })();

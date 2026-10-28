@@ -299,3 +299,5 @@ footer{font-size:1rem}
 .leave .button{margin-top:.2rem}
 .stores-link{margin:0 0 2.5rem}
 @media(min-width:641px){.sky nav{gap:.4rem .85rem}}
+.button.amazon{flex-direction:column;line-height:1.2;padding-top:.6rem;padding-bottom:.6rem}
+.button .btn-sub{display:block;font-weight:400;font-size:.85rem;opacity:.9;margin-top:.15rem}
