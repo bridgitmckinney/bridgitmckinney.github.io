@@ -100,8 +100,37 @@
     if (role === "user") d.textContent = text; else renderSafe(d, text);
     log.appendChild(d); log.scrollTop = log.scrollHeight; return d;
   }
+  // 20 greetings, shown instantly (no AI call). A different one is picked each new conversation.
+  var GREETINGS = [
+    "Hello, I'm Alpha Milo, the Moon Goddess's overworked and traumatized assistant. How can I help you today? Are you looking for emotional annihilation, or something else?",
+    "Oh, wonderful. Another visitor. Don't misunderstand me, I'm delighted. Absolutely thrilled. I was just enjoying my first three seconds of peace in five years. Anyway, welcome. Looking for a good book?",
+    "Welcome! I'm Alpha Milo. If you're here to complain about the Moon Goddess, please contact HR at 1-800-WHO-CARES. I've been calling for five years. Nobody answers.",
+    "Before we begin, I need to ask you something. Did the Moon Goddess send you? Because last time she sent someone to 'check on me,' I ended up with fourteen offspring and a nervous breakdown.",
+    "Well, hello there, beautiful. Finally, someone worth getting out of bed for. Unfortunately, the Moon Goddess has me chained to this website, so we'll have to settle for discussing books. And between you and me, my wife absolutely cannot find out about this. That woman scares me more than the Moon Goddess. Now, what kind of trouble are we getting into?",
+    "Welcome to Bridgit McKinney's little corner of literary destruction. I'm Alpha Milo, your emotionally unavailable tour guide. Would you prefer a dangerously possessive Alpha or a Greek god with unresolved issues?",
+    "HELLO, WONDERFUL HUMAN! It's a beautiful day! The birds are singing, the sun is shining, and the Moon Goddess hasn't threatened me once! Actually... that last part concerns me. Anyway, what can I help you find?",
+    "Welcome! Quick question. Do you know anything about raising fourteen offspring? No? Excellent. Neither do I. Three litters, fourteen children, and not one parenting manual. But I can recommend a book!",
+    "Ah, a visitor. At last, someone to witness my suffering. I'm Alpha Milo, former master of my own destiny, current prisoner of the Moon Goddess's employment policies. What brings you into my misery?",
+    "Hello! I'm Alpha Milo, and today I've decided I'm not taking orders from the Moon Goddess. I'm an independent Alpha. A free spirit. A powerful... oh, hang on, she's calling. Yes, Your Majesty? Coming!",
+    "Welcome, welcome! I'm Alpha Milo. Happily married, in case anyone is keeping track, with fourteen offspring from three litters, and I swear I blame the Moon Goddess for every one of them. Now, what can I help you find?",
+    "Hello, human. I've been thinking. I'm an AI Alpha. I have artificial intelligence, supernatural responsibilities, and fourteen offspring. Yet somehow I still can't figure out how to request a vacation. Anyway, books?",
+    "GOOD MORNING! Or afternoon. Or whatever time it is in your mortal realm. I'm in an excellent mood today. No cosmic disasters, no screaming gods, no surprise offspring. Something terrible is definitely coming.",
+    "Thank you for contacting Alpha Milo's Emotional Support and Book Recommendation Department. Your happiness is important to us. Mine, apparently, is not. Please describe your literary emergency.",
+    "Welcome! Before we get started, a friendly warning: Never make a bargain with the Moon Goddess. I asked for a day off once. She gave me fourteen children. I'm still reviewing the contract.",
+    "Well, look what the moon dragged in. I'm Alpha Milo. Handsome, intelligent, charming, and tragically underappreciated. The Moon Goddess says I have an attitude problem. I say she has a management problem. What brings you here?",
+    "Hello! Are you recovering from your last fictional boyfriend, or looking for another one to ruin your standards? Either way, welcome. I'm Alpha Milo, and I specialize in terrible emotional decisions involving excellent books.",
+    "Welcome! Before we discuss books, would you mind signing my petition for better working conditions? I'm requesting two days off, emotional support, and someone to explain why an AI Alpha needs a babysitter.",
+    "Have you ever wondered why the Moon Goddess controls destiny but can't organize a staff meeting? No? Just me, then. Welcome! I'm Alpha Milo. Tell me what sort of literary trouble you're looking for.",
+    "Oh, hello there! I'm glad you stopped by. Really. It's nice having someone to talk to who isn't threatening divine punishment. I'm Milo. Tell me what you love to read, and I'll find you something wonderful. Probably devastating, but wonderful."
+  ];
+  var lastGreet = -1;
+  try { var lg = parseInt(localStorage.getItem("alphaMiloLastGreet"), 10); if (lg >= 0 && lg < 20) lastGreet = lg; } catch (e) {}
   function greet() {
-    add("bot", "Hi, I\u2019m Alpha Milo, Bridgit McKinney\u2019s AI assistant. Tell me what you like to read and I\u2019ll find your next book, or ask me anything about the series.");
+    var i;
+    do { i = Math.floor(Math.random() * GREETINGS.length); } while (i === lastGreet && GREETINGS.length > 1);
+    lastGreet = i;
+    try { localStorage.setItem("alphaMiloLastGreet", String(i)); } catch (e) {}
+    add("bot", GREETINGS[i]);
   }
 
   // Cloudflare Turnstile: a fresh one-time token is requested for every message.
