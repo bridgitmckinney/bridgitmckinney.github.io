@@ -123,13 +123,17 @@
     return loadTurnstile().then(function () {
       return new Promise(function (resolve, reject) {
         var done = false;
-        var timer = setTimeout(function () { if (!done) { done = true; reject(new Error("turnstile-timeout")); } }, 15000);
-        function ok(t) { if (!done) { done = true; clearTimeout(timer); resolve(t); } }
-        function bad() { if (!done) { done = true; clearTimeout(timer); reject(new Error("turnstile-failed")); } }
+        var timer = setTimeout(function () { if (!done) { done = true; tsPending = null; reject(new Error("turnstile-timeout")); } }, 15000);
+        function ok(t) { if (!done) { done = true; clearTimeout(timer); tsPending = null; resolve(t); } }
+        function bad() { if (!done) { done = true; clearTimeout(timer); tsPending = null; reject(new Error("turnstile-failed")); } }
+        // Render-time callbacks are fixed, so route them to whichever request is pending now.
+        tsPending = { ok: ok, bad: bad };
         if (tsWidgetId === null) {
           tsWidgetId = turnstile.render(tsHolder, {
             sitekey: TURNSTILE_SITE_KEY, appearance: "interaction-only", execution: "execute",
-            callback: ok, "error-callback": bad, "expired-callback": bad
+            callback: function (t) { if (tsPending) tsPending.ok(t); },
+            "error-callback": function () { if (tsPending) tsPending.bad(); },
+            "expired-callback": function () { if (tsPending) tsPending.bad(); }
           });
         } else { turnstile.reset(tsWidgetId); }
         turnstile.execute(tsWidgetId);
