@@ -297,3 +297,5 @@ footer{font-size:1rem}
 .sky.short .ridges{height:7rem}
 .leave{margin-top:2rem}
 .leave .button{margin-top:.2rem}
+.stores-link{margin:0 0 2.5rem}
+@media(min-width:641px){.sky nav{gap:.4rem .85rem}}
