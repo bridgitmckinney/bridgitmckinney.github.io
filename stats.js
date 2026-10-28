@@ -15,8 +15,8 @@
   // Store-button clicks anywhere on the site.
   document.addEventListener("click", function(e){
     var a = e.target.closest && e.target.closest("a");
-    if (!a || !/amazon\.com|books2read\.com/.test(a.href)) return;
-    var book = document.body.getAttribute("data-book");
+    if (!a || !/amazon\.com|books2read\.com|payhip\.com/.test(a.href)) return;
+    var book = a.getAttribute("data-book") || document.body.getAttribute("data-book");
     if (!book) {
       var row = a.closest("tr"), sec = a.closest("section.book");
       if (row) { var h = row.querySelector("th a"); book = h ? h.getAttribute("href").replace("#","") : ""; }
@@ -24,7 +24,7 @@
     }
     var col = a.closest("td") && a.closest("td").getAttribute("data-label");
     var label = (col ? col + " - " : "") + a.textContent.trim();
-    var where = /read\.html/.test(location.pathname) ? "from free sample" : "from books page";
+    var where = /read\.html/.test(location.pathname) ? "from free sample" : /month\.html/.test(location.pathname) ? "from book of the month" : "from books page";
     send("click/" + (book || "unknown") + "/" + label.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
          "Store click: " + (book || "unknown") + " - " + label + " (" + where + ")", true);
   });
