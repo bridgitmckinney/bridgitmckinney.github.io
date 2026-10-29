@@ -57,7 +57,9 @@
 #milo-in{flex:1;border:1px solid #bbb;border-radius:8px;padding:8px;font:inherit}\
 #milo-send{border:0;background:#4a2c6d;color:#fff;border-radius:8px;padding:0 14px;cursor:pointer}\
 #milo-send:disabled{opacity:.5;cursor:default}\
-#milo-note{font-size:11px;color:#666;text-align:center;padding:2px 6px 6px;background:#fff}";
+#milo-note{font-size:11px;color:#666;text-align:center;padding:2px 6px 6px;background:#fff}\
+#milo-in{font-size:16px}\
+@media (max-width:600px){#milo-btn{right:14px;bottom:14px}#milo-panel{left:0;right:0;top:0;bottom:0;width:100%;max-width:none;height:100%;height:100dvh;max-height:none;border-radius:0}body:has(#milo-panel.open) #milo-btn{display:none}#milo-head button{font-size:15px;padding:6px 4px}#milo-send{padding:0 18px;font-size:16px}}";
   var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
 
   var btn = document.createElement("button");
