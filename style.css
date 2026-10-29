@@ -302,3 +302,4 @@ footer{font-size:1rem}
 .button.amazon{flex-direction:column;line-height:1.2;padding-top:.6rem;padding-bottom:.6rem}
 .button .btn-sub{display:block;font-weight:400;font-size:.85rem;opacity:.9;margin-top:.15rem}
 .member-perk{font-family:"Alegreya Sans",Arial,sans-serif;font-size:1rem;margin:.6rem 0 0;padding:.6rem .8rem;background:var(--mist);border-left:3px solid var(--ember);max-width:none}
+.member-perk a,.how-note a,main p a[href^="mailto:"]{overflow-wrap:anywhere}
