@@ -29,11 +29,7 @@
 <main>
 <h2>Leave a review</h2>
 <p>Did you get your copy straight from Bridgit? Your review helps the next reader decide. It only takes a minute, and you do not need an account.</p>
-<form class="review" action="https://formsubmit.co/bridgitmckinney@yahoo.com" method="POST">
-<input type="hidden" name="_subject" value="New book review from the website">
-<input type="hidden" name="_template" value="table">
-<input type="hidden" name="_next" value="https://bridgitmckinney.github.io/thanks.html">
-<input type="text" name="_honey" class="trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+<form class="review" id="review-form" action="#" method="post">
 <label for="book">Which book did you read?</label>
 <select id="book" name="Book" required><option value="">Choose a book</option>
 <option value="The Alpha's Brother">The Alpha's Brother</option>
@@ -58,9 +54,21 @@
 <input id="email" name="email" type="email">
 <label class="check"><input type="checkbox" name="Permission" value="Yes, may be shown on the website" required> Bridgit may show my review, name and rating on her website.</label>
 <button class="button" type="submit">Send my review</button>
+<p class="note">Tapping the button opens your email with your review already written in. Just press <b>Send</b>.</p>
 </form>
+<div id="review-sent" class="confirm-box" hidden>
+<p><b>Almost done!</b> Your email app should now be open with your review filled in. Press <b>Send</b> to deliver it to Bridgit.</p>
+<p>If nothing opened, copy your review below and email it to <a href="mailto:bridgitmckinney@yahoo.com?subject=Book%20review">bridgitmckinney@yahoo.com</a>.</p>
+<textarea id="review-copy" rows="8" readonly style="width:100%;font:inherit"></textarea>
+</div>
 <p class="note">Reviews are read by Bridgit before they go up, so yours will appear on the Books page within a few days.</p>
 <script>(function(){var b={"the-alphas-brother":"The Alpha's Brother","rook":"Rook","where-the-wild-sky-breaks":"Where the Wild Sky Breaks","a-wolf-remembers":"A Wolf Remembers","the-cost-of-love":"The Cost of Love","the-great-war":"The Great War","the-pale-strand-collectors-edition":"The Pale Strand: Collector's Edition","even-gods-fall":"Even Gods Fall","blood-lines":"Blood Lines","the-blood-of-three-crowns":"The Blood of Three Crowns"},k=new URLSearchParams(location.search).get("book");if(k&&b[k])document.getElementById("book").value=b[k];})();</script>
+<script>(function(){var f=document.getElementById("review-form");f.addEventListener("submit",function(e){e.preventDefault();if(!f.reportValidity())return;
+var g=function(n){var el=f.elements[n];return el?(el.value||"").trim():"";};var st=f.querySelector('input[name="Stars"]:checked');
+var body="Book: "+g("Book")+"\nRating: "+(st?st.value:"")+"\nName: "+g("Name")+"\nFrom: "+(g("Town")||"-")+"\nEmail: "+(g("email")||"-")+"\nPermission to show on website: Yes\n\nReview:\n"+g("Review");
+var subj="Book review: "+g("Book");document.getElementById("review-copy").value=body;document.getElementById("review-sent").hidden=false;
+document.getElementById("review-sent").scrollIntoView({behavior:"smooth"});
+window.location.href="mailto:bridgitmckinney@yahoo.com?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(body);});})();</script>
 </main>
 <footer>
 <p>&copy; 2026 Bridgit McKinney. All rights reserved.</p>
