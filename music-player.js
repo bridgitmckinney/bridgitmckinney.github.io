@@ -20,7 +20,9 @@
     { file: "music/where-we-land.mp3?v=20261112a", title: "Where We Land", by: "Ryder Kane and Kira Vane",
       about: "books.html#where-we-land" },
     { file: "music/the-quiet-little-moments.mp3?v=20261112a", title: "The Quiet Little Moments", by: "Kira Vane",
-      about: "books.html#where-we-land" }
+      about: "books.html#where-we-land" },
+    { file: "music/empty-place-beside-me.mp3?v=20261113a", title: "Empty Place Beside Me", by: "from Rook",
+      about: "books.html#empty-place-beside-me" }
   ];
 
   var KEY = "bmMusic";
