@@ -18,6 +18,8 @@
 
   var SONGS = [
     { file: "music/where-we-land.mp3?v=20261112a", title: "Where We Land", by: "Ryder Kane and Kira Vane",
+      about: "books.html#where-we-land" },
+    { file: "music/the-quiet-little-moments.mp3?v=20261112a", title: "The Quiet Little Moments", by: "Kira Vane",
       about: "books.html#where-we-land" }
   ];
 
