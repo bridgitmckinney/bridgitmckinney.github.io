@@ -22,7 +22,8 @@
     { file: "music/the-quiet-little-moments.mp3?v=20261112a", title: "The Quiet Little Moments", by: "Kira Vane",
       about: "books.html#where-we-land" },
     { file: "music/empty-place-beside-me.mp3?v=20261113a", title: "Empty Place Beside Me", by: "Ryder Kane",
-      about: "books.html#empty-place-beside-me" }
+      about: "books.html#empty-place-beside-me" },
+    { file: "music/outlaw-born.mp3?v=20261116a", title: "Outlaw Born", by: "Damien McBride" }
   ];
 
   var KEY = "bmMusic";
