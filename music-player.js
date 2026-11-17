@@ -9,6 +9,7 @@
  *
  * TO ADD A SONG: put the .mp3 in the music/ folder and add one line to SONGS.
  * "about" is optional: a link to the place on the site that explains the song.
+ * "pic" is optional: a small square picture of the singer, shown while the song plays.
  * A page can offer its own button for a song:
  *   <button type="button" data-bm-song="music/where-we-land.mp3">Play the song</button>
  * Self-contained: injects its own styles and touches nothing else on the page.
@@ -23,7 +24,10 @@
       about: "books.html#where-we-land" },
     { file: "music/empty-place-beside-me.mp3?v=20261113a", title: "Empty Place Beside Me", by: "Ryder Kane",
       about: "books.html#empty-place-beside-me" },
-    { file: "music/outlaw-born.mp3?v=20261116a", title: "Outlaw Born", by: "Damien McBride" }
+    { file: "music/outlaw-born.mp3?v=20261116a", title: "Outlaw Born", by: "Damien McBride",
+      pic: "images/music/damien-mcbride.jpg?v=20261117a" },
+    { file: "music/born-for-the-road.mp3?v=20261117a", title: "Born for the Road", by: "Damien McBride",
+      pic: "images/music/damien-mcbride.jpg?v=20261117a" }
   ];
 
   var KEY = "bmMusic";
@@ -70,6 +74,8 @@ background:#f3c07a;color:#16212e;font-size:17px;line-height:1;display:flex;align
 #bm-music a{color:#f3c07a;white-space:nowrap;flex:none}\
 #bm-music a:focus-visible{outline:3px solid #fff;outline-offset:2px}\
 #bm-music.bm-off a{display:none}\
+#bm-music img.bm-pic{flex:none;width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid #f3c07a}\
+#bm-music.bm-off img.bm-pic{display:none}\
 .song-box{margin:1.4rem 0 0;padding:.9rem 1.1rem 1rem;border-left:3px solid #a8500f;background:rgba(0,0,0,.035);scroll-margin-top:1.5rem}\
 .song-box h3{margin:0 0 .3rem;font-size:1.15rem}\
 .song-box p{margin:.3rem 0}\
@@ -98,7 +104,11 @@ font:700 1rem \"Alegreya Sans\",Arial,sans-serif}\
   text.className = "bm-text";
   var aboutLink = document.createElement("a");
   aboutLink.textContent = "About";
+  var pic = document.createElement("img");
+  pic.className = "bm-pic";
+  pic.width = 36; pic.height = 36;
   bar.appendChild(playBtn);
+  bar.appendChild(pic);
   bar.appendChild(text);
   bar.appendChild(aboutLink);
   bar.appendChild(nextBtn);
@@ -116,6 +126,11 @@ font:700 1rem \"Alegreya Sans\",Arial,sans-serif}\
       aboutLink.setAttribute("aria-label", "About the song " + song().title);
       aboutLink.style.display = "";
     } else { aboutLink.style.display = "none"; }
+    if (song().pic) {
+      if (pic.getAttribute("src") !== song().pic) pic.src = song().pic;
+      pic.alt = song().by || "";
+      pic.style.display = "";
+    } else { pic.style.display = "none"; }
     pageButtons(playing);
     playBtn.textContent = playing ? "⏸︎" : "▶︎";
     playBtn.setAttribute("aria-label", playing ? "Pause music" : "Play music");
