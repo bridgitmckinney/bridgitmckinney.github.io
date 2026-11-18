@@ -27,7 +27,9 @@
     { file: "music/outlaw-born.mp3?v=20261116a", title: "Outlaw Born", by: "Damien McBride",
       pic: "images/music/damien-mcbride.jpg?v=20261117a" },
     { file: "music/born-for-the-road.mp3?v=20261117a", title: "Born for the Road", by: "Damien McBride",
-      pic: "images/music/damien-mcbride.jpg?v=20261117a" }
+      pic: "images/music/damien-mcbride.jpg?v=20261117a" },
+    { file: "music/bad-boy.mp3?v=20261118a", title: "Bad Boy", by: "Ryder Kane and Damien McBride",
+      pic: "images/music/ryder-and-damien.jpg?v=20261118a" }
   ];
 
   var KEY = "bmMusic";
