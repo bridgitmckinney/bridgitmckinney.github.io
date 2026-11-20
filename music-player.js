@@ -74,6 +74,8 @@ background:#f3c07a;color:#16212e;font-size:17px;line-height:1;display:flex;align
 #bm-music button.bm-next{width:34px;height:34px;background:transparent;color:#f3c07a;border:1px solid #f3c07a;font-size:14px}\
 #bm-music button:focus-visible{outline:3px solid #fff;outline-offset:2px}\
 #bm-music .bm-text{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}\
+#bm-music:not(.bm-off){width:min(460px,calc(100vw - 110px));box-sizing:border-box}\
+#bm-music:not(.bm-off) .bm-text{flex:1 1 auto}\
 #bm-music .bm-title{font-weight:700}\
 #bm-music .bm-by{color:#c9d2d8}\
 #bm-music.bm-off .bm-next,#bm-music.bm-one .bm-next{display:none}\
