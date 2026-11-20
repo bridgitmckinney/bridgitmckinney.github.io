@@ -31,6 +31,8 @@
     { file: "music/bad-boy.mp3?v=20261118a", title: "Bad Boy", by: "Ryder Kane and Damien McBride",
       pic: "images/music/ryder-and-damien.jpg?v=20261118a" },
     { file: "music/raise-a-little-hell.mp3?v=20261118b", title: "Raise a Little Hell", by: "Damien McBride",
+      pic: "images/music/damien-mcbride.jpg?v=20261117a" },
+    { file: "music/the-night-you-walked-in.mp3?v=20261120a", title: "The Night You Walked In", by: "Damien McBride",
       pic: "images/music/damien-mcbride.jpg?v=20261117a" }
   ];
 
